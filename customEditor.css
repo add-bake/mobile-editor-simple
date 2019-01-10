@@ -1,0 +1,203 @@
+.editor-mask {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+  opacity: 0;
+  background: rgba(0,0,0,.3);
+}
+.editor-mask.active {
+  opacity: 1;
+}
+.editor-operation-main,
+.editor-edit-main,
+.editor-color-main,
+.editor-size-main,
+.editor-line-main {
+  position: fixed;
+  z-index: 10000;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  width: 345px;
+  transition-property: transform,opacity;
+  transform: translate3d(-50%,-50%,0) scale(1.185);
+  text-align: center;
+  opacity: 0;
+  color: #333;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.editor-operation-main.active,
+.editor-edit-main.active {
+  transition-duration: 400ms;
+  transform: translate3d(-50%,-50%,0) scale(1);
+  opacity: 1;
+}
+.editor-operation-title {
+  padding-top: 10px;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 16px;
+  line-height: 50px;
+}
+.editor-operation-box {
+  margin: 10px 16px;
+  *zoom: 1;
+  *clear: both;
+}
+.editor-operation-box:before,
+.editor-operation-box:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.editor-operation-item {
+  float: left;
+  width: 42.5%;
+  height: 44px;
+  margin: 15px 3.75%;
+  box-sizing: border-box;
+  border-radius: 23px;
+  border: 1px solid #9f9f9f;
+  line-height: 42px;
+}
+.editor-operation-item-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background: url("../../img/editor//editor_insert.svg") 0 0 no-repeat;
+  background-size: 100% 100%;
+  vertical-align: text-top;
+}
+#editorEdit .editor-operation-item-icon {
+  background-image: url("../../img/editor/editor_edit.svg")
+}
+#editorDelete .editor-operation-item-icon {
+  background-image: url("../../img/editor/editor_delete.svg")
+}
+#editorCancel .editor-operation-item-icon {
+  background-image: url("../../img/editor/editor_cancel.svg")
+}
+.editor-edit-main,
+.editor-color-main {
+  z-index: 9999;
+}
+.editor-operation-main.active,
+.editor-edit-main.active {
+  z-index: 10001;
+}
+.editor-edit-tools {
+  display: flex;
+  height: 60px;
+  border-bottom: 1px solid #f2f2f2;
+  align-items: center;
+  justify-content: center;
+}
+.editor-edit-tools .tools-item {
+  width: 16px;
+  height: 16px;
+  margin: 0 8px;
+  background: url("../../img/editor/tool_01.svg") 0 0 no-repeat;
+  background-size: 100% 100%;
+}
+.editor-edit-tools .item-02 {
+  background-image: url("../../img/editor/tool_02.svg")
+}
+.editor-edit-tools .item-03 {
+  background-image: url("../../img/editor/tool_03.svg")
+}
+.editor-edit-tools .item-04 {
+  background-image: url("../../img/editor/tool_04.svg")
+}
+.editor-edit-tools .item-05 {
+  background-image: url("../../img/editor/tool_05.svg")
+}
+.editor-edit-tools .item-06 {
+  background-image: url("../../img/editor/tool_06.svg")
+}
+.editor-edit-tools .item-07 {
+  background-image: url("../../img/editor/tool_07.svg")
+}
+.editor-edit-tools .item-08 {
+  background-image: url("../../img/editor/tool_08.svg")
+}
+.editor-edit-tools .item-09 {
+  background-image: url("../../img/editor/tool_09.svg")
+}
+.editor-edit-tools .item-10 {
+  width: 34px;
+  font-size: 16px;
+  color: #c41f32;
+  line-height: 16px;
+  background: none;
+}
+.editor-edit-content {
+  display: block;
+  width: 100%;
+  height: 186px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: none;
+  resize: none;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.editor-edit-btns {
+  display: flex;
+  height: 50px;
+  border-top: 1px solid #f2f2f2;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+}
+.editor-edit-btns .btn-item {
+  flex: 1;
+  color: #333;
+}
+.editor-edit-btns .btn-item:first-child {
+  border-right: 1px solid #f2f2f2;
+}
+.editor-color-main,
+.editor-size-main,
+.editor-line-main {
+  transform: translate3d(-50%,-55%,0) scale(1);
+}
+.editor-color-main.active,
+.editor-size-main.active,
+.editor-line-main.active {
+  z-index: 10002;
+  transition-duration: 300ms;
+  transform: translate3d(-50%,-50%,0) scale(1);
+  opacity: 1;
+}
+.editor-color-choose {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 31px 5px;
+}
+.editor-color-choose .color-item {
+  width: 39px;
+  height: 39px;
+  margin: 10px 14px;
+}
+.editor-color-choose .color-fff {
+  border: 1px solid #999;
+}
+.editor-size-choose {
+  padding: 12px 0;
+}
+.editor-size-choose .size-item,
+.editor-size-choose .line-item {
+  font-size: 14px;
+  color: #333;
+  line-height: 35px;
+  text-align: center;
+}
+.editor-line-main .editor-size-choose {
+  padding-bottom: 48px;
+}
