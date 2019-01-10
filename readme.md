@@ -1,6 +1,8 @@
 ```
 // 编辑器显示
-customEditor.show(content, function (operationType, res) {})
+customEditor.show(content, function (operationType, res) {
+  // ...
+})
 ```
 |参数| 描述 |
 |--|--|
